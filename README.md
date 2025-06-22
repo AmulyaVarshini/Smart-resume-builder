@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+Smart Resume Builder with AI Suggestions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that helps users create professional resumes with real-time AI-generated improvement suggestions. Built using React, Node.js, Express, MongoDB, Tailwind CSS, and OpenAI GPT-3.5.
+📝 Features
 
-## Available Scripts
+    ✍️ Fill in your resume details using a user-friendly form
 
-In the project directory, you can run:
+    🤖 Get intelligent suggestions powered by OpenAI GPT-3.5
 
-### `npm start`
+    💾 Save resumes to MongoDB backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    📄 Preview and export resumes as PDF using react-to-print
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    🎨 Beautiful, responsive design with Tailwind CSS
 
-### `npm test`
+🔧 Tech Stack
+Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    React.js
 
-### `npm run build`
+    Tailwind CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    React-to-Print
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Node.js
 
-### `npm run eject`
+    Express.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    MongoDB (Mongoose)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    OpenAI API (GPT-3.5)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+⚙️ Installation
+1. Clone the repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+git clone https://github.com/your-username/smart-resume-builder.git
+cd smart-resume-builder
 
-## Learn More
+2. Setup Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd backend
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a .env file inside the backend folder:
 
-### Code Splitting
+MONGO_URI=your_mongodb_connection_string
+OPENAI_API_KEY=your_openai_api_key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Then run:
 
-### Analyzing the Bundle Size
+npm start
+# OR
+npx nodemon server.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Setup Frontend
 
-### Making a Progressive Web App
+cd ../frontend
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Create a .env file in the frontend folder:
 
-### Advanced Configuration
+REACT_APP_OPENAI_API_KEY=your_openai_api_key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Then run the app:
 
-### Deployment
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The frontend will start on http://localhost:3000 and backend on http://localhost:5000.
+📸 Screenshots
+Form Input	Resume Preview + Suggestions
+	
+🚀 How It Works
 
-### `npm run build` fails to minify
+    User fills in the resume form
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    On submission:
+
+        Data is sent to OpenAI GPT-3.5 for suggestions
+
+        Resume is saved to MongoDB
+
+    Suggestions are displayed on the page
+
+    User can preview and export resume as PDF
+
+🧠 AI Integration
+
+We use OpenAI GPT-3.5 Turbo to provide intelligent suggestions to improve:
+
+    Summary writing
+
+    Skill phrasing
+
+    Project descriptions
+
+    Resume tone and structure
+
+🛠️ Folder Structure
+
+smart-resume-builder/
+├── backend/
+│   ├── server.js
+│   ├── routes/
+│   └── models/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   └── App.js
+│   └── tailwind.config.js
+
+📄 Export as PDF
+
+We use react-to-print to trigger the browser's print dialog, enabling users to export a clean resume layout as a PDF file.
+✅ Future Improvements
+
+    User authentication & resume history
+
+    Templates & themes for resumes
+
+    Download button instead of print dialog
+
+    Advanced formatting in AI suggestions
